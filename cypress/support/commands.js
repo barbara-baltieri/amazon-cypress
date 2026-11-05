@@ -81,6 +81,10 @@ Cypress.Commands.add('changeDeliveryLocation', (country) => {
   HomePage.changeDeliveryLocation(country);
 });
 
+Cypress.Commands.add('dismissDeliveryNotice', () => {
+  HomePage.dismissDeliveryNotice();
+});
+
 Cypress.Commands.add('changeShippingCountry', (country) => {
   HomePage.changeShippingCountry(country);
 });

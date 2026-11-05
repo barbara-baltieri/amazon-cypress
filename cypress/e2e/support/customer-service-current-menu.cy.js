@@ -13,11 +13,21 @@ describe('Customer Service (current header layout)', () => {
     // Given Amazon home page is opened
     cy.openHomePage();
 
+    // When I set the delivery location to Brazil
+    cy.changeDeliveryLocation('Brazil');
+
+    // And I dismiss the delivery-location notice
+    cy.dismissDeliveryNotice();
+
+    // And I wait for the location-specific page to finish loading
+    cy.document().its('readyState').should('eq', 'complete');
+    cy.get('#glow-ingress-line2').should('contain.text', 'Brazil');
+
     // When I validate the visible main menu items
     cy.validateMainMenu(data.visibleMenuItems);
 
-    // And I navigate to Customer Service through the header link
-    cy.openCustomerServiceFromNavigation(data.customerServiceLinkText);
+    // And I click Customer Service in the main menu
+    cy.openCustomerService();
 
     // And I search for "where is my stuff" and click the "Where's My Stuff?" result
     CustomerServicePage.searchHelpTopicAndOpenResult(data.helpTopic, data.expectedHeading);

@@ -18,10 +18,10 @@ The default `baseUrl` is `https://www.amazon.com`. Override it with `CYPRESS_BAS
 
 ### Customer Service
 
-The PDF asks for a click on “Customer Service” in the main menu, but that item is absent from the current visible menu.
+The current header menu depends on the delivery location. `customer-service-current-menu.cy.js` sets the delivery location to Brazil, dismisses Amazon's delivery-location notice, waits for the page to finish loading, then validates the visible menu and clicks “Customer Service” before searching for “where is my stuff”.
 
-- `customer-service.cy.js` preserves the original flow and may fail when validating or clicking the missing menu item.
-- `customer-service-current-menu.cy.js` checks the menu items that are visible today, then follows the Customer Service link's `href` directly. It searches for “where is my stuff” and validates the support article. This covers the destination flow, but cannot test the requested menu click.
+- `customer-service.cy.js` preserves the original PDF flow and may fail if the current site does not show the original menu items.
+- `customer-service-current-menu.cy.js` validates the menu after changing the delivery location, clicks “Customer Service”, and validates the support article.
 
 ### Free shipping
 

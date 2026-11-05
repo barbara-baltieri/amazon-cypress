@@ -21,7 +21,7 @@ class HomePage {
     });
   }
 
-  // Current header: Customer Service lives in a hidden account flyout, so navigate through its href.
+  // Use the header link when Customer Service is not available in the visible main menu.
   openNavigationLink(label) {
     cy.get(home.navigation).contains('a', label).should('have.attr', 'href').then((href) => {
       cy.visit(href);
@@ -83,6 +83,14 @@ class HomePage {
     cy.get('#GLUXCountryList').select(country, { force: true });
     cy.get(home.locationDoneButton).should('be.visible').click();
     cy.get(home.locationLine).should('contain.text', country);
+  }
+
+  dismissDeliveryNotice() {
+    cy.get(home.deliveryNoticeDismissButton)
+      .should('be.visible')
+      .and('contain.text', 'Dismiss')
+      .click();
+    cy.get(home.deliveryNotice).should('not.be.visible');
   }
 
   changeShippingCountry(country) {

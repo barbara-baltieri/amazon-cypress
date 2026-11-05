@@ -19,6 +19,8 @@ export const selectors = {
     locationCountryDropdown: '#GLUXCountryListDropdown',
     locationOption: '.a-dropdown-link',
     locationDoneButton: '[name="glowDoneButton"]',
+    deliveryNotice: '#glow-toaster-body',
+    deliveryNoticeDismissButton: '.glow-toaster-button-dismiss',
   },
   searchResults: {
     item: '[data-component-type="s-search-result"], div.s-result-item[data-asin]:not([data-asin=""])',
