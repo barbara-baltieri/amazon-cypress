@@ -11,8 +11,12 @@ class HomePage {
 
   assertMainMenuContains(items) {
     cy.get(home.mainMenu).should('be.visible').within(() => {
-      items.forEach((item) => {
-        cy.contains(home.menuLink, item).should('be.visible');
+      cy.get(home.menuLink).filter(':visible').then(($links) => {
+        const normalize = (text) => text.replace(/\s+/g, ' ').trim().toLowerCase();
+        const visibleLabels = [...$links].map((link) => normalize(link.textContent));
+        items.forEach((item) => {
+          expect(visibleLabels).to.include(normalize(item));
+        });
       });
     });
   }

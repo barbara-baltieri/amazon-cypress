@@ -5,9 +5,9 @@ export const selectors = {
   home: {
     searchInput: '#twotabsearchtextbox',
     searchButton: '#nav-search-submit-button',
-    mainMenu: '#nav-xshop',
+    mainMenu: '#nav-main',
     navigation: '#navbar',
-    menuLink: 'a.nav-a',
+    menuLink: 'a.nav-a, #nav-hamburger-menu',
     countrySelector: '#icp-nav-flyout',
     countryDropdown: '#icp-dropdown',
     countryOption: '.a-dropdown-link',

@@ -1,5 +1,16 @@
 {
-  "visibleMenuItems": ["Today's Deals", "Gift Cards"],
+  "visibleMenuItems": [
+    "All",
+    "Holiday Gifts",
+    "Custom Products",
+    "Home Improvement",
+    "Toys & Games",
+    "Pet Supplies",
+    "Gift Cards",
+    "Prime",
+    "Groceries",
+    "Amazon Home"
+  ],
   "customerServiceLinkText": "Customer Service",
   "helpTopic": "where is my stuff",
   "expectedHeading": "Where's My Stuff"
