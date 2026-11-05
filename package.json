@@ -1,0 +1,15 @@
+{
+  "name": "amazon-cypress-e2e",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cypress E2E suite for Amazon (Customer Service and free shipping scenarios)",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:run:support": "cypress run --spec cypress/e2e/support/**/*.cy.js",
+    "cy:run:cart": "cypress run --spec cypress/e2e/cart/**/*.cy.js"
+  },
+  "devDependencies": {
+    "cypress": "^15.0.0"
+  }
+}

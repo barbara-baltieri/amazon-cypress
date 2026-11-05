@@ -1,0 +1,5 @@
+{
+  "mainMenuItems": ["Today's Deals", "Customer Service", "Registry", "Gift Cards", "Sell"],
+  "helpTopic": "where is my stuff",
+  "expectedHeading": "Where's My Stuff?"
+}
